@@ -1,0 +1,20 @@
+<h1>Bills</h1>
+<a href='/bill_search'>Search Again</a>
+<% @results.each do |bill| %>
+  <h4><%= bill["title"] %></h4>
+  <ul>
+    <li>Chamber: <%= bill["chamber"] %></li>
+    <li>Session: <%= bill["session"] %></li>
+    <li>Type:<ul>
+      <% bill["type"].each do |type| %>
+        <li><%= type %></li>
+      <% end %>
+    </ul></li>
+    <li>Subjects:<ul>
+      <% bill["subjects"].each do |sub|  %>
+        <li><%= sub %></li>
+      <% end %>
+    </ul></li>
+    <li>Bill ID: <%= bill["bill_id"] %></li>
+  </ul>
+<% end %>
