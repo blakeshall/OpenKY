@@ -13,7 +13,9 @@ class OpenStates
   def bill_search(options ={})
     url = "/bills/?state=KY&q=#{options[:keyword]}"
     url += "&chamber=#{options[:chamber]}"
-    url += "&subject=#{URI.encode(options[:subject])}"
+    if !options[:subject].nil?
+      url += "&subject=#{URI.encode(options[:subject])}"
+    end
     url += "&apikey=" + API_KEY
     puts("!!!!!!!!!!!")
     puts(url)
