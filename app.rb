@@ -27,6 +27,16 @@ get '/' do
   erb :index
 end
 
+#Search form for legislators
+get '/legislator_search' do
+  erb :legislator_search
+end
+
+get '/legislator/:id' do
+  erb :legislator
+end
+
+
 #Search form for bills
 get '/bill_search' do
   erb :bill_search
