@@ -21,6 +21,14 @@ class OpenStates
     puts(url)
     self.class.get(url)
   end
+  
+  def bill_lookup(options={})
+    url = "/bills/ky/"
+    url += "#{options[:session]}/"
+    url += "#{options[:bill_id]}/"
+    url += "?apikey=#{API_KEY}"
+    self.class.get(url)
+  end
 
 end
 get '/' do
@@ -32,11 +40,6 @@ get '/bill_search' do
   erb :bill_search
 end
 
-get '/bill/:id' do
-  #TODO Lookup a specific bill based on Session and/or Chamber and Bill ID
-  erb :bill
-end
-
 #results for bill search
 get '/bills/search/' do
   @results = OpenStates.new.bill_search({:keyword => params['keyword'], :chamber => params['chamber'], :subject => params['subject']})
@@ -45,4 +48,11 @@ get '/bills/search/' do
   puts('#####################')
   puts(params)
   erb :bills_results
+end
+
+#bill detail / lookup
+get '/bills/:session/:bill_id' do
+  @bill = OpenStates.new.bill_lookup({:session => params[:session], :bill_id => params[:bill_id]})
+  
+  erb :bill_detail
 end
