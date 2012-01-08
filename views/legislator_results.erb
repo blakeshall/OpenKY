@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="span6">
+    <h1>Legislators</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="span6">
+    <a href='/bill_search'>Search Again</a>
+  </div>
+</div>
+<div class="row">
+  <div class="span16">
+    <table>
+      <% @results.each do |bill| %>
+        <tr>
+  		  <h4><%= bill["title"] %></h4>
+ 		  <ul>
+  			<li>Chamber: <%= bill["chamber"] %></li>
+  		    <li>Session: <%= bill["session"] %></li>
+    		<li>Type:
+				<ul>
+      			  <% bill["type"].each do |type| %>
+        		  	<li><%= type %></li>
+      			  <% end %>
+    		  </ul>
+		    </li>
+    	    <li>Subjects:
+			  <ul>
+      			<% bill["subjects"].each do |sub|  %>
+        			<li><%= sub %></li>
+      			<% end %>
+    		  </ul>
+		    </li>
+    	    <li>Bill ID: <%= bill["bill_id"] %></li>
+ 	 	  </ul>
+        </tr>
+	  <% end #results.each %>
+    </table>
+  </div>
+</div>
