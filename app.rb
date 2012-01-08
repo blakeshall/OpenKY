@@ -27,7 +27,7 @@ class OpenStates
     url += "#{options[:session]}/"
     url += "#{options[:bill_id]}/"
     url += "?apikey=#{API_KEY}"
-    self.class.get(url)
+    self.class.get(URI.encode(url))
   end
 
 end
@@ -53,6 +53,6 @@ end
 #bill detail / lookup
 get '/bills/:session/:bill_id' do
   @bill = OpenStates.new.bill_lookup({:session => params[:session], :bill_id => params[:bill_id]})
-  
+  pp(@bill)
   erb :bill_detail
 end
