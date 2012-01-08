@@ -1,2 +1,17 @@
 <h2><%= @bill["title"] %></h2>
 
+<a href="<%= @bill["sources"][0]["url"] %>">Source</a>
+<p>Type: <%= @bill["type"][0] %></p>
+<p>Session: <%= @bill["session"] %></p>
+<p>Chamber: <%= @bill["chamber"] %></p>
+<ul>
+	<lh>Sponsors</lh>
+	<% @bill["sponsors"].each do |s| %>
+	<li><%= s["name"] %></li>
+	<% end %>
+</ul>
+<ul>
+	<% @bill["subjects"].each do |sub| %>
+	<li><%= sub %></li>
+	<% end %>
+</ul>

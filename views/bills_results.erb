@@ -15,19 +15,21 @@
         <tr>
   <h4><%= bill["title"] %></h4>
   <ul>
-    <li>Chamber: <%= bill["chamber"] %></li>
     <li>Session: <%= bill["session"] %></li>
-    <li>Type:<ul>
-      <% bill["type"].each do |type| %>
-        <li><%= type %></li>
-      <% end %>
-    </ul></li>
+    <li>Type:
+      <ul>
+        <% bill["type"].each do |type| %>
+          <li><%= type %></li>
+        <% end %>
+      </ul>
+    </li>
     <li>Subjects:<ul>
       <% bill["subjects"].each do |sub|  %>
         <li><%= sub %></li>
       <% end %>
     </ul></li>
     <li>Bill ID: <%= bill["bill_id"] %></li>
+    <li><a href="/bills/<%= URI.encode(bill["session"]) %>/<%= URI.encode(bill["bill_id"]) %>">Details</a></li>
   </ul>
       </tr>
 <% end %>
