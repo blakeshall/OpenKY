@@ -3,3 +3,11 @@
 		<h2>Results</h2>
 	</div>
 </div>
+
+<div class="row">
+	<div class="span12"
+		<% @results.each do |c| %>
+			<p><%= c["committee"] %></p>
+		<% end %>
+	</div>
+</div>
