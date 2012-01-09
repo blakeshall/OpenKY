@@ -67,6 +67,17 @@ end
 #bill detail / lookup
 get '/bills/:session/:bill_id' do
   @bill = OpenStates.new.bill_lookup({:session => params[:session], :bill_id => params[:bill_id]})
-  pp(@bill)
   erb :bill_detail
+end
+
+#committee search form
+get '/committee_search' do
+  erb :committee_search
+end
+
+#Committee Search Results
+get '/committee/search/' do
+  @results = OpenStates.new.committee_search({:committee => params[:committee], :subcommittee => params[:subcommittee], :chamber => params[:chamber]})
+  pp(@results)
+  erb :committee_results
 end
