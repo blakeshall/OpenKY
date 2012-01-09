@@ -17,8 +17,6 @@ class OpenStates
       url += "&subject=#{URI.encode(options[:subject])}"
     end
     url += "&apikey=" + API_KEY
-    puts("!!!!!!!!!!!")
-    puts(url)
     self.class.get(url)
   end
   
@@ -29,6 +27,22 @@ class OpenStates
     url += "?apikey=#{API_KEY}"
     self.class.get(URI.encode(url))
   end
+  
+  def committee_search(options={})
+    url = "/committees/?state=ky"
+    if !options[:committee].nil?
+      url += "&committee=#{URI.encode(options[:committee}"
+    end
+    if !options[:subcommittee].nil?
+      url += "&subcommittee=#{URI.encode(options[:subcommittee]}"
+    end
+    if !options[:chamber].nil?
+      url += "&chamber=#{options[:chamber]}"
+    end
+    url += "&apikey=" + API_KEY
+    self.class.get(url)
+  end
+
 
 end
 get '/' do
