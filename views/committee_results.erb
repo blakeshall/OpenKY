@@ -1,0 +1,13 @@
+<div class="row" >
+	<div class="span6">
+		<h2>Results</h2>
+	</div>
+</div>
+
+<div class="row">
+	<div class="span12"
+		<% @results.each do |c| %>
+			<a href="/committee/<%= c["id"] %>"><%= c["committee"] %></a>
+		<% end %>
+	</div>
+</div>

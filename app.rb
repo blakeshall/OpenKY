@@ -40,8 +40,6 @@ class OpenStates
       url += "&subject=#{URI.encode(options[:subject])}"
     end
     url += "&apikey=" + API_KEY
-    puts("!!!!!!!!!!!")
-    puts(url)
     self.class.get(url)
   end
   
@@ -50,8 +48,29 @@ class OpenStates
     url += "#{options[:session]}/"
     url += "#{options[:bill_id]}/"
     url += "?apikey=#{API_KEY}"
+    self.class.get(URI.encode(url))
+  end
+  
+  def committee_search(options={})
+    url = "/committees/?state=ky"
+    if !options[:committee].nil?
+      url += "&committee=#{URI.encode(options[:committee])}"
+    end
+    if !options[:subcommittee].nil?
+      url += "&subcommittee=#{URI.encode(options[:subcommittee])}"
+    end
+    if !options[:chamber].nil?
+      url += "&chamber=#{options[:chamber]}"
+    end
+    url += "&apikey=" + API_KEY
     self.class.get(url)
   end
+  
+  def committee_lookup(com_id)
+    url = "/committees/#{com_id}/?apikey=#{API_KEY}"
+    self.class.get(url)
+  end
+
 
 end
 
@@ -96,6 +115,26 @@ end
 #bill detail / lookup
 get '/bills/:session/:bill_id' do
   @bill = OpenStates.new.bill_lookup({:session => params[:session], :bill_id => params[:bill_id]})
-  
   erb :bill_detail
+end
+
+#committee search form
+get '/committee_search' do
+  erb :committee_search
+end
+
+#Committee Search Results
+get '/committee/search/' do
+  @results = OpenStates.new.committee_search({:committee => params[:committee], :subcommittee => params[:subcommittee], :chamber => params[:chamber]})
+  pp(@results)
+  erb :committee_results
+end
+
+get '/committee/:com_id' do
+  @committee = OpenStates.new.committee_lookup(params[:com_id])
+  erb :committee_detail
+end
+
+get '/committees' do
+  erb :committees
 end
