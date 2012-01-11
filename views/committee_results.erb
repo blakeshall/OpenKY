@@ -7,7 +7,7 @@
 <div class="row">
 	<div class="span12"
 		<% @results.each do |c| %>
-			<p><%= c["committee"] %></p>
+			<a href="/committee/<%= c["id"] %>"><%= c["committee"] %></a>
 		<% end %>
 	</div>
 </div>
