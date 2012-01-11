@@ -9,6 +9,29 @@ API_KEY = '15976b43616b43298ea1a3a98971d3e0'
 class OpenStates
   include HTTParty
   base_uri 'http://openstates.org/api/v1/'
+  
+  def legislator_search(options={})
+    url = "legislators/?state=KY"
+    url += "&first_name=#{options[:first_name]}" 
+    url += "&last_name=#{options[:last_name]}" 
+    url += "&chamber=#{options[:chamber]}" 
+    url += "&active=#{options[:active]}" 
+    url += "&term=#{options[:term]}" 
+    url += "&district=#{options[:district]}" 
+    url += "&party=#{options[:party]}" 
+    
+    url += "&apikey=" + API_KEY
+    puts("!!!!!!!!!!!!!")
+    puts(url)
+    self.class.get(url)
+  end
+  
+  def legislator_lookup(options={})
+    url = "/legislators/ky/"
+    url += "#{options[:legislator_id]}/"
+    url += "?apikey=#{API_KEY}"
+    self.class.get(url)
+  end
 
   def bill_search(options ={})
     url = "/bills/?state=KY&q=#{options[:keyword]}"
@@ -31,6 +54,8 @@ class OpenStates
   end
 
 end
+
+
 get '/' do
   erb :index
 end
@@ -40,9 +65,17 @@ get '/legislator_search' do
   erb :legislator_search
 end
 
-get '/legislator/:id' do
-  erb :legislator
+get '/legislator/search/' do
+  @results = OpenStates.new.legislator_search({:first_name => params['first_name'], :last_name => params['last_name'], :chamber => params['chamber'], :active => params['active'], :term => params['term'], :district => params['district'], :party => params['party']})
+  
+  puts(@results)
+  puts('#####################')
+  puts(params)
+  erb :legislator_results
 end
+
+
+
 
 
 #Search form for bills

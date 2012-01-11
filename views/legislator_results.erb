@@ -5,36 +5,28 @@
 </div>
 <div class="row">
   <div class="span6">
-    <a href='/bill_search'>Search Again</a>
+    <a href='/legislator_search'>Search Again</a>
   </div>
 </div>
 <div class="row">
   <div class="span16">
     <table>
-      <% @results.each do |bill| %>
-        <tr>
-  		  <h4><%= bill["title"] %></h4>
- 		  <ul>
-  			<li>Chamber: <%= bill["chamber"] %></li>
-  		    <li>Session: <%= bill["session"] %></li>
-    		<li>Type:
-				<ul>
-      			  <% bill["type"].each do |type| %>
-        		  	<li><%= type %></li>
-      			  <% end %>
-    		  </ul>
-		    </li>
-    	    <li>Subjects:
-			  <ul>
-      			<% bill["subjects"].each do |sub|  %>
-        			<li><%= sub %></li>
-      			<% end %>
-    		  </ul>
-		    </li>
-    	    <li>Bill ID: <%= bill["bill_id"] %></li>
- 	 	  </ul>
-        </tr>
-	  <% end #results.each %>
+    <%  if !@results.nil?
+          @results.each do |legislator| %>
+      <tr>
+  		  <h4><%= legislator["full_name"] %></h4>
+ 		    <ul>
+  		  	<li>Chamber: <%= legislator["chamber"] %></li>
+  		    <li>Active: <%= legislator["active"] %></li>
+    	    <li>legislator ID: <%= legislator["leg_id"] %></li>
+    	    <li>District: <%= legislator["district"]%></li>
+    	    <li>Party: <%= legislator["party"]%></li>
+ 	 	    </ul>
+      </tr>
+	  <% end #results.each 
+	    else # if nil %>
+	    <h2> Sorry, no results </h2>
+	    <% end # else%>
     </table>
   </div>
 </div>
