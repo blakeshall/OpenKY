@@ -1,0 +1,9 @@
+<h2><%= @committee["committee"] %></h2>
+<a href="<%= @committee["sources"][0]["url"] %>">Source</a>
+
+<ul>
+	<lh>Members</lh>
+	<% @committee["members"].each do |mem| %>
+		<li><%= mem["name"] %></li>
+	<% end %>
+</ul>
