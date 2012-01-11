@@ -42,6 +42,11 @@ class OpenStates
     url += "&apikey=" + API_KEY
     self.class.get(url)
   end
+  
+  def committee_lookup(com_id)
+    url = "/committees/#{com_id}/?apikey=#{API_KEY}"
+    self.class.get(url)
+  end
 
 
 end
