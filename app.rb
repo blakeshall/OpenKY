@@ -11,7 +11,7 @@ class OpenStates
   base_uri 'http://openstates.org/api/v1/'
   
   def legislator_search(options={})
-    url = "legislators/?state=KY"
+    url = "/legislators/?state=KY"
     url += "&first_name=#{options[:first_name]}" 
     url += "&last_name=#{options[:last_name]}" 
     url += "&chamber=#{options[:chamber]}" 
@@ -28,7 +28,7 @@ class OpenStates
   
   def legislator_lookup(options={})
     url = "/legislators/ky/"
-    url += "#{options[:legislator_id]}/"
+    url += "#{options[:leg_id]}/"
     url += "?apikey=#{API_KEY}"
     self.class.get(url)
   end
@@ -93,9 +93,9 @@ get '/legislator/search/' do
   erb :legislator_results
 end
 
-
-
-
+# TODO: Implement legislator_detail.erb
+get '/legislator/:leg_id' do
+end
 
 #Search form for bills
 get '/bill_search' do
