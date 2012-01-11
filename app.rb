@@ -91,3 +91,7 @@ get '/committee/:com_id' do
   @committee = OpenStates.new.committee_lookup(params[:com_id])
   erb :committee_detail
 end
+
+get '/committees' do
+  erb :committees
+end
