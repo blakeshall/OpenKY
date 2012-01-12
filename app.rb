@@ -51,20 +51,21 @@ class OpenStates
     self.class.get(URI.encode(url))
   end
   
-  def committee_search(options={})
-    url = "/committees/?state=ky"
-    if !options[:committee].nil?
-      url += "&committee=#{URI.encode(options[:committee])}"
-    end
-    if !options[:subcommittee].nil?
-      url += "&subcommittee=#{URI.encode(options[:subcommittee])}"
-    end
-    if !options[:chamber].nil?
-      url += "&chamber=#{options[:chamber]}"
-    end
-    url += "&apikey=" + API_KEY
-    self.class.get(url)
-  end
+  # Committee search not needed
+  #def committee_search(options={})
+  #  url = "/committees/?state=ky"
+  #  if !options[:committee].nil?
+  #    url += "&committee=#{URI.encode(options[:committee])}"
+  #  end
+  #  if !options[:subcommittee].nil?
+  #    url += "&subcommittee=#{URI.encode(options[:subcommittee])}"
+  #  end
+  #  if !options[:chamber].nil?
+  #   url += "&chamber=#{options[:chamber]}"
+  #  end
+  #  url += "&apikey=" + API_KEY
+  #  self.class.get(url)
+  #end
   
   def committee_lookup(com_id)
     url = "/committees/#{com_id}/?apikey=#{API_KEY}"
@@ -118,17 +119,18 @@ get '/bills/:session/:bill_id' do
   erb :bill_detail
 end
 
+# Removed committee search stuff as it is not really needed
 #committee search form
-get '/committee_search' do
-  erb :committee_search
-end
+#get '/committee_search' do
+#  erb :committee_search
+#end
 
 #Committee Search Results
-get '/committee/search/' do
-  @results = OpenStates.new.committee_search({:committee => params[:committee], :subcommittee => params[:subcommittee], :chamber => params[:chamber]})
-  pp(@results)
-  erb :committee_results
-end
+#get '/committee/search/' do
+#  @results = OpenStates.new.committee_search({:committee => params[:committee], :subcommittee => params[:subcommittee], :chamber => params[:chamber]})
+#  pp(@results)
+#  erb :committee_results
+#end
 
 get '/committee/:com_id' do
   @committee = OpenStates.new.committee_lookup(params[:com_id])
