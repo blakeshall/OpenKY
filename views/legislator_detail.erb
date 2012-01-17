@@ -1,1 +1,7 @@
-<h2>Not yet implemented</h2>
+<h2><%= @legislator["full_name"] %></h2>
+<img src="<%= @legislator["photo_url"] %>" alt="Photo of <%= @legislator["full_name"] %>" />
+<a href="<%= @legislator["url"] %>">Website</a>
+<p>Office Address: <%= @legislator["office_address"] %></p>
+<p>Office Phone Number: <%= @legislator["office_phone"] %></p>
+<p>Party: <%= @legislator["party"] %></p>
+<p>District: <%= @legislator["district"] %></p>
