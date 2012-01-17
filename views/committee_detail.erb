@@ -4,6 +4,6 @@
 <ul>
 	<lh>Members</lh>
 	<% @committee["members"].each do |mem| %>
-		<li><%= mem["name"] %></li>
+    <li><a href="/legislators/<%= mem["leg_id"]%>"><%= mem["name"] %></a></li>
 	<% end %>
 </ul>

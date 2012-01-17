@@ -7,7 +7,7 @@
 <ul>
 	<lh>Sponsors</lh>
 	<% @bill["sponsors"].each do |s| %>
-	<li><%= s["name"] %></li>
+    <li><a href="/legislators/<%= s["leg_id"]%>"><%= s["name"] %></a></li>
 	<% end %>
 </ul>
 <ul>

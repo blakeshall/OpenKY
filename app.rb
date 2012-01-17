@@ -87,20 +87,12 @@ end
 
 get '/legislator/search/' do
   @results = OpenStates.new.legislator_search({:first_name => params['first_name'], :last_name => params['last_name'], :chamber => params['chamber'], :active => params['active'], :term => params['term'], :district => params['district'], :party => params['party']})
-  
-  puts(@results)
-  puts('#####################')
-  puts(params)
   erb :legislator_results
 end
 
 # TODO: Implement legislator_detail.erb
-get '/legislator/:leg_id' do
+get '/legislators/:leg_id' do
   @legislator = OpenStates.new.legislator_lookup({:leg_id => params['leg_id']});
-
-  puts(@legislator)
-  puts('^^^^^^^^^^^^^^^^^^');
-  puts(params);
   erb :legislator_detail
 end
 
@@ -112,10 +104,6 @@ end
 #results for bill search
 get '/bills/search/' do
   @results = OpenStates.new.bill_search({:keyword => params['keyword'], :chamber => params['chamber'], :subject => params['subject']})
-
-  puts(@results)
-  puts('#####################')
-  puts(params)
   erb :bills_results
 end
 
