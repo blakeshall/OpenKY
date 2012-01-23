@@ -14,11 +14,10 @@
     <%  if !@results.nil?
           @results.each do |legislator| %>
       <tr>
-  		  <h4><%= legislator["full_name"] %></h4>
+        <h4><a href="/legislators/<%= legislator["leg_id"]%>"><%= legislator["full_name"] %></a></h4>
  		    <ul>
   		  	<li>Chamber: <%= legislator["chamber"] %></li>
   		    <li>Active: <%= legislator["active"] %></li>
-    	    <li>legislator ID: <%= legislator["leg_id"] %></li>
     	    <li>District: <%= legislator["district"]%></li>
     	    <li>Party: <%= legislator["party"]%></li>
  	 	    </ul>

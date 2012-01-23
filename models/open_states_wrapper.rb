@@ -34,6 +34,9 @@ class OpenStates
     if !options[:subject].nil?
       url += "&subject=#{URI.encode(options[:subject])}"
     end
+    if !options[:leg_id].nil?
+      url += "&sponsor_id=#{options[:leg_id]}"
+    end
     url += "&apikey=" + API_KEY
     self.class.get(url)
   end

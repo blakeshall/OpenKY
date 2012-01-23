@@ -24,6 +24,7 @@ end
 
 get '/legislators/:leg_id' do
   @legislator = OpenStates.new.legislator_lookup({:leg_id => params['leg_id']});
+  @bills = OpenStates.new.bill_search({:leg_id => params['leg_id']})
   erb :legislator_detail
 end
 
@@ -34,7 +35,7 @@ end
 
 #results for bill search
 get '/bills/search/' do
-  @results = OpenStates.new.bill_search({:keyword => params['keyword'], :chamber => params['chamber'], :subject => params['subject']})
+  @results = OpenStates.new.bill_search({:keyword => params['keyword'], :chamber => params['chamber'], :subject => params['subject'], :leg_id => params['leg_id']})
   erb :bills_results
 end
 

@@ -5,3 +5,7 @@
 <p>Office Phone Number: <%= @legislator["office_phone"] %></p>
 <p>Party: <%= @legislator["party"] %></p>
 <p>District: <%= @legislator["district"] %></p>
+<h3>Sponsored Bills</h3>
+<% @bills.each do |b| %>
+  <p><a href="/bills/<%= URI.encode(b["session"])%>/<%= b["bill_id"] %>" ><%= b["title"] %></a></p>
+<% end %>
