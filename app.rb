@@ -18,7 +18,7 @@ get '/legislator_search' do
 end
 
 get '/legislator/search/' do
-  @results = OpenStates.new.legislator_search({:first_name => params['first_name'], :last_name => params['last_name'], :chamber => params['chamber'], :active => params['active'], :term => params['term'], :district => params['district'], :party => params['party']})
+  @results = OpenStates.new.legislator_search(params)
   erb :legislator_results
 end
 
