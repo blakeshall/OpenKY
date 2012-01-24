@@ -8,12 +8,12 @@
     <div class="container">
       <div class="row">
         <div class="span6">
-          <h1>OpenKY</h1>
+          <a href="/"><h1>OpenKY</h1></a>
         </div>
       </div>
       <div class="row">
         <div class="span12">
-          <ul>
+          <ul class="nav">
             <li><a href="/bill_search">Bills</a></li>
             <li><a href="/legislator_search">Legislators</a></li>
             <li><a href="/committees">Committees</a></li>
@@ -21,6 +21,11 @@
         </div>
       </div>
     <%= yield %>
+    <div class="row">
+      <div class="span16">
+        <footer>Made by <a href="www.blakeshall.com">Blake Hall</a> and Drew Fitzpatrick</footer>
+      </div>
+    </div>
     </div>
   </body>
 </html>
