@@ -1,48 +1,28 @@
-<form method="get" action="/legislator/search/">
 <div class="row">
-  <div class="span6">
+  <div class="span8">
     <h1>Legislators</h1>
   </div>
 </div>
 <div class="row">
   <div class="span8">
-    <div class="row">
-      <div class="span7">
+<form method="get" action="/legislator/search/" class="form-stacked">
+  <fieldset>
+    <legend>Detailed Search</legend>
   		<label>First Name</label>
   		<input type="text" name="first_name" />
 		<label>Last Name</label>
 		<input type="text" name="last_name" />
-      </div>
-    </div>
-    <div class="row">
-      <div class="span7">
   		<label>Chamber</label>
   		<input type="radio" name="chamber" value="" checked />Any
   		<input type="radio" name="chamber" value="upper"/>Upper
   		<input type="radio" name="chamber" value="lower"/>Lower
-      </div>
-    </div>
-    <div class="row">
-      <div class="span7">
   		<label>Active legislator?</label>
   		<p>True <input type="radio" name="active" value="true" checked></p>
 		  <p>False <input type="radio" name="active" value="false"></p>
-      </div>
-    </div>
-	<div class="row">
-		<div class="span7">
 			<label>Term</label>
 			<input type="text" name="term" />
-		</div>
-	</div>
-	<div class="row">
-		<div class="span7">
 			<label>District</label>
 			<input type="text" name="district">
-		</div>
-	</div>
-	<div class="row">
-		<div class="span7">
 			<label>Party</label>
 			<p>Democratic
 			<input type="checkbox" name="party" value="democratic" />
@@ -50,16 +30,11 @@
 			<p>Republican
 			<input type="checkbox" name="party" value="republican" />
 			</p>
-		</div>
-	</div>
-    <div class="row">
-      <div class="span7">
-        <input type="submit" value="submit"/>
-      </div>
+        <input type="submit" value="Search" class="btn primary"/>
+      </fieldset>
+      </form>
     </div>
-  </div>
-</form>
-  <div class="span8">
+    <div class="span8">
     <form action="/legislator_geo" method="get" class="form-stacked">
       <fieldset>
         <legend>Search by Zipcode</legend>

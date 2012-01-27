@@ -7,74 +7,253 @@
   <div class="span12">
     <div class="row">
       <div class="span11">
-<form method="get" action="/bills/search/">
+        <form method="get" action="/bills/search/" class="form-stacked">
+          <fieldset>
+            <div class="input">
   <label>Keyword</label>
   <input type="text" name="keyword" />
-      </div>
-    </div>
-    <div class="row">
-      <div class="span11">
   <label>Chamber</label>
   <input type="radio" name="chamber" value="" checked/>Any
   <input type="radio" name="chamber" value="upper"/>Upper
   <input type="radio" name="chamber" value="lower"/>Lower
-      </div>
-    </div>
-    <div class="row">
-      <div class="span11">
   <label>Subject</label>
-  <input type="checkbox" name="subject" value="Agriculture and Food"/>Agriculture and Food
-  <input type="checkbox" name="subject" value="Animal Rights and Wildlife Issues"/>Animal Rights and Wildlife Issues
-  <input type="checkbox" name="subject" value="Arts and Humanites"/>Arts and Humanities
-  <input type="checkbox" name="subject" value="Budget, Spending, and Taxes"/>Budget, Spending, and Taxes
-  <input type="checkbox" name="subject" value="Business and Consumers"/>Business and Consumers
-  <input type="checkbox" name="subject" value="Campaign Finance and Election Issues"/>Campaign Finance and Election Issues
-  <input type="checkbox" name="subject" value="Civil Liberties and Civil Rights"/>Civil Liberties and Civil Rights
-  <input type="checkbox" name="subject" value="Commerce"/>Commerce
-  <input type="checkbox" name="subject" value="Crime"/>Crime
-  <input type="checkbox" name="subject" value="Drugs"/>Drugs
-  <input type="checkbox" name="subject" value="Education"/>Education
-  <input type="checkbox" name="subject" value="Energy"/>Energy
-  <input type="checkbox" name="subject" value="Environmental"/>Environmental
-  <input type="checkbox" name="subject" value="Executive Branch"/>Executive Branch
-  <input type="checkbox" name="subject" value="Family and Children Issues"/>Family and Children Issues
-  <input type="checkbox" name="subject" value="Federal, State, and Local Relations"/>Federal, State, and Local Relations
-  <input type="checkbox" name="subject" value="Gambling and Gaming"/>Gambling and Gaming
-  <input type="checkbox" name="subject" value="Government Reform"/>Government Reform
-  <input type="checkbox" name="subject" value="Guns"/>Guns
-  <input type="checkbox" name="subject" value="Health"/>Health
-  <input type="checkbox" name="subject" value="Housing and Property"/>Housing and Property
-  <input type="checkbox" name="subject" value="Immigration"/>Immigration
-  <input type="checkbox" name="subject" value="Indigenous Peoples"/>Indigenous Peoples
-  <input type="checkbox" name="subject" value="Insurance"/>Insurance
-  <input type="checkbox" name="subject" value="Judiciary"/>Judiciary
-  <input type="checkbox" name="subject" value="Labor and Employment"/>Labor and Employment
-  <input type="checkbox" name="subject" value="Legal Issues"/>Legal Issues
-  <input type="checkbox" name="subject" value="Legislative Affairs"/>Legislative Affairs
-  <input type="checkbox" name="subject" value="Military"/>Military
-  <input type="checkbox" name="subject" value="Municipal and County Issues"/>Municipal and County Issues
-  <input type="checkbox" name="subject" value="Nominations"/>Nominations
-  <input type="checkbox" name="subject" value="Other"/>Other
-  <input type="checkbox" name="subject" value="Public Services"/>Public Services
-  <input type="checkbox" name="subject" value="Recreation"/>Recreation
-  <input type="checkbox" name="subject" value="Reproductive Issues"/>Reproductive Issues
-  <input type="checkbox" name="subject" value="Resolutions"/>Resolutions
-  <input type="checkbox" name="subject" value="Science and Medical Research"/>Science and Medical Research
-  <input type="checkbox" name="subject" value="Senior Issues"/>Senior Issues
-  <input type="checkbox" name="subject" value="Sexual Orientation and Gender Issues"/>Sexual Orientation and Gender Issues
-  <input type="checkbox" name="subject" value="Social Issues"/>Social Issues
-  <input type="checkbox" name="subject" value="State Agencies"/>State Agencies
-  <input type="checkbox" name="subject" value="Technology and Communication"/>Technology and Communication
-  <input type="checkbox" name="subject" value="Trade"/>Trade
-  <input type="checkbox" name="subject" value="Transportation"/>Transportation
-  <input type="checkbox" name="subject" value="Welfare and Poverty"/>Welfare and Poverty
-    </div>
-  </div>
+  <ul class="unstyled">
     <div class="row">
-      <div class="span11">
+      <div class="span4">
+    <li>
+      <label>
+        <input type="checkbox" name="subject" value="Agriculture and Food"/><span>Agriculture and Food</span>
+      </label>
+    </li>
+    <li>
+      <label>
+        <input type="checkbox" name="subject" value="Animal Rights and Wildlife Issues"/><span>Animal Rights and Wildlife Issues</span>
+      </label>
+    </li>
+    <li>
+      <label>
+        <input type="checkbox" name="subject" value="Arts and Humanites"/><span>Arts and Humanities</span>
+      </label>
+    </li>
+    <li>
+      <label>
+        <input type="checkbox" name="subject" value="Budget, Spending, and Taxes"/><span>Budget, Spending, and Taxes<span>
+      </label>
+    </li>
+    <li>
+      <label>
+        <input type="checkbox" name="subject" value="Business and Consumers"/><span>Business and Consumers</span>
+      </label>
+    </li>
+    <li>
+      <label>
+        <input type="checkbox" name="subject" value="Campaign Finance and Election Issues"/><span>Campaign Finance and Election Issues</span>
+      </label>
+    </li>
+    <li>
+      <label>
+        <input type="checkbox" name="subject" value="Civil Liberties and Civil Rights"/><span>Civil Liberties and Civil Rights</span>
+      </label>
+    </li>
+    <li>
+      <label>
+        <input type="checkbox" name="subject" value="Commerce"/><span>Commerce</span>
+      </label>
+    </li>
+    <li>
+      <label>
+        <input type="checkbox" name="subject" value="Crime"/><span>Crime</span>
+      </label>
+    </li>
+    <li>
+      <label>
+        <input type="checkbox" name="subject" value="Drugs"/><span>Drugs</span>
+      </label>
+    </li>
+    <li>
+      <label>
+        <input type="checkbox" name="subject" value="Education"/><span>Education</span>
+      </label>
+    </li>
+    <li>
+      <label>
+        <input type="checkbox" name="subject" value="Energy"/><span>Energy</span>
+      </label>
+    </li>
+    <li>
+      <label>
+        <input type="checkbox" name="subject" value="Environmental"/><span>Environmental</span>
+      </label>
+    </li>
+    <li>
+    <label>
+      <input type="checkbox" name="subject" value="Executive Branch"/><span>Executive Branch</span>
+    </label>
+    </li>
+    <li>
+    <label>
+      <input type="checkbox" name="subject" value="Family and Children Issues"/><span>Family and Children Issues</span>
+    </label>
+    </li>
+    <li>
+    <label>
+      <input type="checkbox" name="subject" value="Federal, State, and Local Relations"/><span>Federal, State, and Local Relations</span>
+    </label>
+    </li>
+    <li>
+    <label>
+      <input type="checkbox" name="subject" value="Gambling and Gaming"/><span>Gambling and Gaming</span>
+    </label>
+    </li>
+    <li>
+    <label>
+      <input type="checkbox" name="subject" value="Government Reform"/><span>Government Reform</span>
+    </label>
+    </li>
+    <li>
+    <label>
+      <input type="checkbox" name="subject" value="Guns"/><span>Guns</span>
+    </label>
+    </li>
+    <li>
+    <label>
+      <input type="checkbox" name="subject" value="Health"/><span>Health</span>
+    </label>
+    </li>
+    <li>
+    <label>
+      <input type="checkbox" name="subject" value="Housing and Property"/><span>Housing and Property</span>
+    </label>
+    </li>
+    <li>
+    <label>
+      <input type="checkbox" name="subject" value="Immigration"/><span>Immigration</span>
+    </label>
+    </li>
+  </div>
+  <div class="span4">
+    <li>
+    <label>
+      <input type="checkbox" name="subject" value="Indigenous Peoples"/><span>Indigenous Peoples</span>
+    </label>
+    </li>
+    <li>
+    <label>
+      <input type="checkbox" name="subject" value="Insurance"/><span>Insurance</span>
+    </label>
+    </li>
+    <li>
+    <label>
+      <input type="checkbox" name="subject" value="Judiciary"/><span>Judiciary</span>
+    </label>
+    </li>
+    <li>
+    <label>
+      <input type="checkbox" name="subject" value="Labor and Employment"/><span>Labor and Employment</span>
+     </label>
+    </li>
+    <li>
+    <label>
+      <input type="checkbox" name="subject" value="Legal Issues"/><span>Legal Issues</span>
+     </label>
+    </li>
+     <li>
+    <label>
+      <input type="checkbox" name="subject" value="Legislative Affairs"/><span>Legislative Affairs</span>
+      </label>
+    </li>
+    <li>
+    <label>
+      <input type="checkbox" name="subject" value="Military"/><span>Military</span>
+       </label>
+    </li>
+   <li>
+    <label>
+      <input type="checkbox" name="subject" value="Municipal and County Issues"/><span>Municipal and County Issues</span>
+        </label>
+    </li>
+ <li>
+    <label>
+      <input type="checkbox" name="subject" value="Nominations"/><span>Nominations</span>
+         </label>
+    </li>
+ <li>
+    <label>
+      <input type="checkbox" name="subject" value="Other"/><span>Other</span>
+     </label>
+    </li>
+     <li>
+    <label>
+      <input type="checkbox" name="subject" value="Public Services"/><span>Public Services</span>
+      </label>
+    </li>
+    <li>
+    <label>
+      <input type="checkbox" name="subject" value="Recreation"/><span>Recreation</span>
+       </label>
+    </li>
+   <li>
+    <label>
+      <input type="checkbox" name="subject" value="Reproductive Issues"/><span>Reproductive Issues</span>
+        </label>
+    </li>
+  <li>
+    <label>
+      <input type="checkbox" name="subject" value="Resolutions"/><span>Resolutions</span>
+     </label>
+    </li>
+    <li>
+    <label>
+      <input type="checkbox" name="subject" value="Science and Medical Research"/><span>Science and Medical Research</span>
+      </label>
+    </li>
+    <li>
+    <label>
+      <input type="checkbox" name="subject" value="Senior Issues"/><span>Senior Issues</span>
+      </label>
+    </li>
+   <li>
+    <label>
+      <input type="checkbox" name="subject" value="Sexual Orientation and Gender Issues"/><span>Sexual Orientation and Gender Issues</span>
+      </label>
+    </li>
+    <li>
+    <label>
+      <input type="checkbox" name="subject" value="Social Issues"/><span>Social Issues</span>
+      </label>
+    </li>
+   <li>
+    <label>
+      <input type="checkbox" name="subject" value="State Agencies"/><span>State Agencies</span>
+       </label>
+    </li>
+   <li>
+    <label>
+      <input type="checkbox" name="subject" value="Technology and Communication"/><span>Technology and Communication</span>
+        </label>
+    </li>
+ <li>
+    <label>
+      <input type="checkbox" name="subject" value="Trade"/><span>Trade</span>
+         </label>
+    </li>
+ <li>
+    <label>
+      <input type="checkbox" name="subject" value="Transportation"/><span>Transportation</span>
+      </label>
+    </li>
+   <li>
+    <label>
+      <input type="checkbox" name="subject" value="Welfare and Poverty"/><span>Welfare and Poverty</span>
+    </label>
+    </li>
+  </div>
+</div>
+
+</ul>
+</div>
         <input type="submit" value="submit"/>
-      </div>
-    </div>
+  </fieldset>
 </form>
 </div>
 </div>
