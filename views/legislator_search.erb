@@ -5,9 +5,9 @@
   </div>
 </div>
 <div class="row">
-  <div class="span12">
+  <div class="span8">
     <div class="row">
-      <div class="span11">
+      <div class="span7">
   		<label>First Name</label>
   		<input type="text" name="first_name" />
 		<label>Last Name</label>
@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="span11">
+      <div class="span7">
   		<label>Chamber</label>
   		<input type="radio" name="chamber" value="" checked />Any
   		<input type="radio" name="chamber" value="upper"/>Upper
@@ -23,26 +23,26 @@
       </div>
     </div>
     <div class="row">
-      <div class="span11">
+      <div class="span7">
   		<label>Active legislator?</label>
   		<p>True <input type="radio" name="active" value="true" checked></p>
 		  <p>False <input type="radio" name="active" value="false"></p>
       </div>
     </div>
 	<div class="row">
-		<div class="span11">
+		<div class="span7">
 			<label>Term</label>
 			<input type="text" name="term" />
 		</div>
 	</div>
 	<div class="row">
-		<div class="span11">
+		<div class="span7">
 			<label>District</label>
 			<input type="text" name="district">
 		</div>
 	</div>
 	<div class="row">
-		<div class="span11">
+		<div class="span7">
 			<label>Party</label>
 			<p>Democratic
 			<input type="checkbox" name="party" value="democratic" />
@@ -53,10 +53,23 @@
 		</div>
 	</div>
     <div class="row">
-      <div class="span11">
+      <div class="span7">
         <input type="submit" value="submit"/>
       </div>
     </div>
+  </div>
+  <div class="span8">
+    <form action="/legislator_geo" method="get" class="form-stacked">
+      <fieldset>
+        <legend>Search by Zipcode</legend>
+        <div class="clearfix">
+          <label for="zipcode">Zipcode</label>
+          <div class="input">
+            <input class="xlarge" id="zipcode" name="zipcode" size="10" type="text" />
+          </div>
+        </div><!-- /clearfix -->
+      </fieldset>
+    </form>
   </div>
 </div>
 </form>
