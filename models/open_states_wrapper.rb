@@ -28,6 +28,15 @@ class OpenStates
     self.class.get(url)
   end
 
+  def legislator_geo(options={})
+    url = "/legislators/geo/"
+    url += "?long=#{options[:long]}"
+    url += "&lat=#{options[:lat]}"
+    url += "&apikey=" + API_KEY
+    puts url
+    self.class.get(url)
+  end
+
   def bill_search(options ={})
     url = "/bills/?state=KY&q=#{options[:keyword]}"
     url += "&chamber=#{options[:chamber]}"

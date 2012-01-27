@@ -4,6 +4,7 @@ require 'json'
 require 'httparty'
 require 'uri'
 require 'pp'
+require 'geocoder'
 load "models/open_states_wrapper.rb" 
 
 
@@ -26,6 +27,13 @@ get '/legislators/:leg_id' do
   @legislator = OpenStates.new.legislator_lookup({:leg_id => params['leg_id']});
   @bills = OpenStates.new.bill_search({:leg_id => params['leg_id']})
   erb :legislator_detail
+end
+
+get '/legislator_geo' do
+  @coords = Geocoder.coordinates(params[:zipcode])
+  @results = OpenStates.new.legislator_geo({:lat => @coords[0], :long => @coords[1]})
+
+  erb :legislator_results
 end
 
 #Search form for bills
