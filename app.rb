@@ -5,8 +5,7 @@ require 'httparty'
 require 'uri'
 require 'pp'
 require 'geocoder'
-load "models/open_states_wrapper.rb" 
-
+require './models/open_states_wrapper'
 
 
 get '/' do
