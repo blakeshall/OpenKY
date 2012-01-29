@@ -5,7 +5,7 @@ class OpenStates
   include HTTParty
   base_uri 'http://openstates.org/api/v1/'
   
-  def legislator_search(options={})
+  def self.legislator_search(options={})
     url = "/legislators/?state=KY"
     url += "&first_name=#{options[:first_name]}" 
     url += "&last_name=#{options[:last_name]}" 
@@ -18,26 +18,26 @@ class OpenStates
     url += "&apikey=" + API_KEY
     puts("!!!!!!!!!!!!!")
     puts(url)
-    self.class.get(url)
+    get(url)
   end
   
-  def legislator_lookup(options={})
+  def self.legislator_lookup(options={})
     url = "/legislators/"
     url += "#{options[:leg_id]}/"
     url += "?apikey=#{API_KEY}"
-    self.class.get(url)
+    get(url)
   end
 
-  def legislator_geo(options={})
+  def self.legislator_geo(options={})
     url = "/legislators/geo/"
     url += "?long=#{options[:long]}"
     url += "&lat=#{options[:lat]}"
     url += "&apikey=" + API_KEY
     puts url
-    self.class.get(url)
-  end
+    get(url)
+    end
 
-  def bill_search(options ={})
+  def self.bill_search(options ={})
     url = "/bills/?state=KY&q=#{options[:keyword]}"
     url += "&chamber=#{options[:chamber]}"
     if !options[:subject].nil?
@@ -47,20 +47,20 @@ class OpenStates
       url += "&sponsor_id=#{options[:leg_id]}"
     end
     url += "&apikey=" + API_KEY
-    self.class.get(url)
+    get(url)
   end
   
-  def bill_lookup(options={})
+  def self.bill_lookup(options={})
     url = "/bills/ky/"
     url += "#{options[:session]}/"
     url += "#{options[:bill_id]}/"
     url += "?apikey=#{API_KEY}"
-    self.class.get(URI.encode(url))
+    get(URI.encode(url))
   end
  
-  def committee_lookup(com_id)
+  def self.committee_lookup(com_id)
     url = "/committees/#{com_id}/?apikey=#{API_KEY}"
-    self.class.get(url)
+    get(url)
   end
 
 end
