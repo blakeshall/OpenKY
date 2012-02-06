@@ -4,15 +4,11 @@
   </div>
 </div>
 <div class="row">
-  <div class="span6">
-    <a href='/legislator_search'>Search Again</a>
-  </div>
-</div>
-<div class="row">
   <div class="span16">
     <table>
-    <%  if !@results.nil?
-          @results.each do |legislator| %>
+    <%  if @results.length != 0
+    @results.each do |legislator| %>
+      <a href="/legislator_search">Search Again</a>
       <tr>
         <h4><a href="/legislators/<%= legislator["leg_id"]%>"><%= legislator["full_name"] %></a></h4>
  		    <ul>
@@ -24,7 +20,7 @@
       </tr>
 	  <% end #results.each 
 	    else # if nil %>
-	    <h2> Sorry, no results </h2>
+      <p>No legislators found <a href="/legislator_search">Search Again</a></p>
 	    <% end # else%>
     </table>
   </div>

@@ -4,12 +4,11 @@
   </div>
 </div>
 <div class="row">
-  <div class="span6">
-    <a href='/bill_search'>Search Again</a>
-  </div>
-</div>
-<div class="row">
   <div class="span16">
+    <% if @results.length == 0 %>
+      <p>No bills found <a href='/bill_search'>Search Again</a></p>
+    <% else %>
+      <a href='/bill_search'>Search Again</a>
     <table>
       <% @results.each do |bill| %>
         <tr>
@@ -34,5 +33,6 @@
       </tr>
 <% end %>
     </table>
+  <% end %>
   </div>
 </div>
